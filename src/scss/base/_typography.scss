@@ -4,8 +4,25 @@ body {
   font-weight: 500;
 }
 
-@media all and (-ms-high-contrast: none) {
-  body {
-    font-family: 'メイリオ', 'Meiryo', sans-serif;
+.heading-2 {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.54;
+  padding-top: 100px;
+  text-align: center;
+
+  @include respond(md) {
+    font-size: 26px;
   }
+}
+
+.heading-3 {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.75;
+}
+
+.default-text {
+  font-size: 16px;
+  line-height: 2;
 }

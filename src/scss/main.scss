@@ -1,12 +1,214 @@
-@import 'utilities/functions';
 @import 'utilities/mixins';
+@import 'utilities/functions';
 @import 'utilities/variables';
 
 @import 'base/destyle';
 @import 'base/base';
 @import 'base/typography';
 
-@import 'components/button';
+// レイアウト
 
-@import 'layout/footer';
-@import 'layout/header';
+// heroセクション
+
+.hero {
+  padding-top: 40%;
+  background-image: url(../images/bg-main_visual.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  @media (resolution: 2dppx) {
+    background-image: url(../images/bg-main_visual@2x.jpg);
+  }
+
+  &__logo {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+  }
+}
+
+// featureセクション
+
+.feature {
+  background-color: #fffff3;
+
+  &__content {
+    padding-bottom: 100px;
+    text-align: center;
+  }
+
+  &__text {
+    margin-top: 50px;
+
+    @include respond(sm) {
+      text-align: left;
+    }
+  }
+}
+
+// aboutセクション
+
+.about {
+  background-image: url(../images/bg-content.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  padding-bottom: 150px;
+  background-attachment: fixed;
+
+  @media (resolution: 2dppx) {
+    background-image: url(../images/bg-content@2x.jpg);
+  }
+  &__title {
+    color: #fff;
+  }
+
+  &__content {
+    margin-top: 100px;
+    position: relative;
+    z-index: 2;
+
+    @include respond(md) {
+      max-width: 90%;
+      margin: 100px auto 0;
+    }
+
+    @include respond(sm) {
+      max-width: 100%;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -5%;
+      left: -5%;
+      height: 110%;
+      width: 110%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+
+      @include respond(md) {
+        display: none;
+      }
+    }
+  }
+
+  &__content-item {
+    display: flex;
+
+    @include respond(md) {
+      flex-direction: column;
+    }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+
+      @include respond(md) {
+        flex-direction: column;
+      }
+    }
+  }
+  &__content-image {
+    flex-basis: 50%;
+    object-fit: cover;
+  }
+  &__content-body {
+    background-color: #fffff3;
+    padding: 40px 20px;
+    flex-basis: 50%;
+  }
+  &__content-title {
+  }
+
+  &__content-text {
+    margin-top: 20px;
+  }
+}
+
+// exampleセクション
+.example {
+  background-color: #fffff3;
+  padding-bottom: 100px;
+
+  &__text {
+    text-align: center;
+    margin-top: 50px;
+
+    @include respond(sm) {
+      text-align: left;
+    }
+  }
+  &__logo-box {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    @include respond(md) {
+      justify-content: center;
+    }
+  }
+  &__logo {
+    @include respond(md) {
+      flex-basis: 40%;
+      margin-top: 20px;
+    }
+    @include respond(sm) {
+      flex-basis: 50%;
+    }
+  }
+}
+// footer
+
+.footer {
+  background-color: #000000;
+  color: #fff;
+  font-size: 12px;
+  padding: 20px 0;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+
+    @include respond(md) {
+      display: block;
+      text-align: center;
+    }
+  }
+  &__copyright {
+    grid-column-start: 2;
+  }
+  &__nav {
+    margin-left: auto;
+    @include respond(md) {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
+  &__list {
+    display: flex;
+
+    @include respond(md) {
+      justify-content: center;
+    }
+  }
+  &__item {
+    margin-right: 20px;
+
+    @include respond(md) {
+      margin-right: 0;
+    }
+
+    &:not(:last-of-type) {
+      @include respond(md) {
+        margin-right: 20px;
+      }
+    }
+  }
+  &__link {
+    text-decoration: underline;
+  }
+}
