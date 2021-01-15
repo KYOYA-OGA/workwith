@@ -1,0 +1,30 @@
+{
+  "name": "realNewTemplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel src/index.html --open",
+    "build": "parcel build src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.0.0-nightly.532",
+    "parcel-bundler": "^1.12.4",
+    "precss": "^4.0.0",
+    "sass": "^1.32.4"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.0.0",
+    "postcss": "^8.2.4",
+    "postcss-modules": "^4.0.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 11",
+    "not dead"
+  ]
+}
